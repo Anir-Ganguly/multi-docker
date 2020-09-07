@@ -16,7 +16,6 @@ after_success:
   # log in to docker CLI
   # DOCKER_ID and DOCKER_PASSWORD are stored as env vars in travis UI similar to aws elasic beanstalk access keys
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  #- docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD" docker.io
   # Take those images and push them to docker hub
   - docker push anirban1980/multi-client
   - docker push anirban1980/multi-nginx
