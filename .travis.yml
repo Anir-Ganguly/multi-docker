@@ -14,6 +14,7 @@ after_success:
   - docker build -t anirban1980/multi-server ./server
   - docker build -t anirban1980/multi-worker ./worker
   # log in to docker CLI
+  # DOCKER_ID and DOCKER_PASSWORD are stored as env vars in travis UI similar to aws elasic beanstalk access keys
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push anirban1980/multi-client
